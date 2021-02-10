@@ -51,15 +51,7 @@ The sliding window technique was used to detect vehicles. First, each image is p
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-The search was done on half of the image, which helped to optimize performacne. Here are some example images:  
-
-
-![alt text][image7]  
-![alt text][image8]  
-![alt text][image9]  
-![alt text][image10]  
-![alt text][image11]  
-![alt text][image12]  
+The search was done on half of the image, which helped to optimize performance.
 
 ---
 
