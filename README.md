@@ -27,25 +27,7 @@ The goals / steps of this project are the following:
 
 The code for this step is contained in the second code cell of the IPython notebook called `extract_features()`.  
 
-Since the images in the training data are in .png format, I loaded them in using matplotlib.image so that they are already normalized. This means that we do not need an additional normalization step when training the classifier. After reading in the images, I converted the features to the YCrCb color channel since it produced the best results. I then extracted the HOG features using the function `get_hog_features`. Below are examples of HOG feature extraction from both vehicle and non vehicle images.  
-
-Original Vehicle Image  
-![alt text][image1]  
-
-HOG Image  
-![alt text][image2]  
-
-YCrCb Transformation  
-![alt text][image3]  
-
-Original Non-Vehicle Image  
-![alt text][image4]  
-
-HOG Image  
-![alt text][image5]  
-
-YCrCb Transformation  
-![alt text][image6]  
+Since the images in the training data are in .png format, I loaded them in using matplotlib.image so that they are already normalized. This means that we do not need an additional normalization step when training the classifier. After reading in the images, I converted the features to the YCrCb color channel since it produced the best results. I then extracted the HOG features using the function `get_hog_features`. 
 
 
 #### 2. Explanation of how I settled on my final choice of HOG parameters.
