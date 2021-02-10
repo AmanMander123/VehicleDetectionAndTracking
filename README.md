@@ -21,9 +21,9 @@ The goals / steps of this project are the following:
 [image11]: /output_images/out_53.png
 [image12]: /output_images/out_54.png
 
-###Histogram of Oriented Gradients (HOG)
+### Histogram of Oriented Gradients (HOG)
 
-####1. Explanation of how I extracted HOG features from the training images.
+#### 1. Explanation of how I extracted HOG features from the training images.
 
 The code for this step is contained in the second code cell of the IPython notebook called `extract_features()`.  
 
@@ -48,26 +48,26 @@ YCrCb Transformation
 ![alt text][image6]  
 
 
-####2. Explanation of how I settled on my final choice of HOG parameters.
+#### 2. Explanation of how I settled on my final choice of HOG parameters.
 
 I used all 3 channels with 18 orientations, 8 pixels per cell and 2 cells per block. This configuration allowed for the best balance between accuracy and speed. 
 
-####3. Description of how I trained a classifier using my selected HOG features.  
+#### 3. Description of how I trained a classifier using my selected HOG features.  
 
 The code for this step is contained in the second code cell of the IPython notebook called `train()`.  
 
 First, each image in the training set was converted to a horizontal feature vector. Then the dataset was split between between training and testing data with 20% of the data being used for the test set. An SVM classifier was used to train the classifier.  
 
-###Sliding Window Search
+### Sliding Window Search
 
-####1. Description of how I implemented a sliding window search and how I decided what scales to search and how much to overlap window.  
+#### 1. Description of how I implemented a sliding window search and how I decided what scales to search and how much to overlap window.  
 
 The code for this step is contained in the second code cell of the IPython notebook called `search_windows()`.  
 
 The sliding window technique was used to detect vehicles. First, each image is passed into the function `gethotwindows()` that detects vehicles in the image. Since the upper half of each image mostly contains the sky, only the bottom half of the image is used to search for vehicles. As for the x axis, information from the previous image is stored so that we minimize the range over which we search for cars in the x axis. I used a window size of 75 x 75 with an overlap of 80%. After that, the HOG features are extracted and pushed into the classifier that determines whether a vehicle is present or not. 
 
 
-####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
+#### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
 The search was done on half of the image, which helped to optimize performacne. Here are some example images:  
 
@@ -83,11 +83,11 @@ The search was done on half of the image, which helped to optimize performacne. 
 
 ### Video Implementation
 
-####1. Link to your final video output. 
+#### 1. Link to your final video output. 
 Here's the [link to my video result](https://github.com/AmanMander123/VehicleDetectionAndTracking)
 
 
-####2. Description of how I implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
+#### 2. Description of how I implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
 The code for this step is contained in the second code cell of the IPython notebook.  
 
@@ -96,9 +96,9 @@ First, a heatmap for each of the dectections is created using the function `add_
 
 ---
 
-###Discussion
+### Discussion
 
-####1. Brief discussion on any problems / issues I faced in your implementation of this project.  Where will the pipeline likely fail?  What could I do to make it more robust?
+#### 1. Brief discussion on any problems / issues I faced in your implementation of this project.  Where will the pipeline likely fail?  What could I do to make it more robust?
 
 Although it is good, the vehicle detection piepline is still not perfect. Sometimes it takes several seconds to detect a car that is present in the images. Other times, it mistakenly classifies 2 vehicles as 1 when they are close to each other. The processing time to create the output video is also very long, which makes it impractical for real-time applications. In order to make it more robust, a better classifier such as neural nets can be used.  
 
